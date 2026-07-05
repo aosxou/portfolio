@@ -187,7 +187,21 @@
         .tag.neutral{background:var(--bg);color:var(--sub);border-color:var(--border);}
         .proj-meta{display:flex;gap:20px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-bottom:28px;}
         .proj-meta span{display:flex;align-items:center;gap:5px;}
-        .proj-link{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border:1.5px solid var(--primary);border-radius:999px;font-size:14px;font-weight:700;color:var(--primary);transition:background .2s,color .2s;}
+        .proj-nar{ display:flex; flex-direction:column; gap:14px; margin-bottom:22px; }
+        .nar-item{}
+        .nar-label{
+          font-size:11px;font-weight:700;text-transform:uppercase;
+          letter-spacing:.07em;color:var(--primary);margin-bottom:6px;
+        }
+        .nar-list{ list-style:none; display:flex; flex-direction:column; gap:4px; }
+        .nar-list li{
+          font-size:14px;color:var(--sub);line-height:1.6;
+          padding-left:14px;position:relative;
+        }
+        .nar-list li::before{
+          content:'—';position:absolute;left:0;
+          color:var(--primary);font-size:11px;top:3px;
+        }display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border:1.5px solid var(--primary);border-radius:999px;font-size:14px;font-weight:700;color:var(--primary);transition:background .2s,color .2s;}
         .proj-link:hover{background:var(--primary);color:#fff;}
 
         #awards{background:var(--surface);}
@@ -340,7 +354,30 @@
                 <div class="proj-num">PROJECT 01</div>
                 <h3 class="proj-title">유어커넥트</h3>
                 <p class="proj-en">YourConnect</p>
-                <p class="proj-desc">AI 기반 커리어 코칭·멘토링 및 헤드헌팅 플랫폼. 취업 준비생이 커리어 방향을 스스로 설정하기 어려운 문제를 해결하기 위해 기획했습니다.</p>
+                <div class="proj-nar">
+                    <div class="nar-item">
+                        <div class="nar-label">Need</div>
+                        <ul class="nar-list">
+                            <li>취업 준비생이 커리어 방향을 스스로 설정하기 어려운 문제</li>
+                            <li>멘토와 멘티를 연결하는 체계적인 플랫폼 부재</li>
+                        </ul>
+                    </div>
+                    <div class="nar-item">
+                        <div class="nar-label">Action</div>
+                        <ul class="nar-list">
+                            <li>4인 팀 구성 중 프론트엔드 개발 및 UI 디자인 담당</li>
+                            <li>Figma로 서비스 디자인 시안 제작 후 직접 퍼블리싱</li>
+                            <li>React 기반 프론트엔드 UI 설계 및 구현</li>
+                            <li>AI 코칭 서비스 화면 흐름 설계 및 사용자 인터랙션 개발</li>
+                        </ul>
+                    </div>
+                    <div class="nar-item">
+                        <div class="nar-label">Result</div>
+                        <ul class="nar-list">
+                            <li>2025 신구대학교 창업아이디어경진대회 우수상 수상</li>
+                        </ul>
+                    </div>
+                </div>
                 <div class="proj-tags">
                     <span class="tag">React</span>
                     <span class="tag">JavaScript</span>
@@ -362,7 +399,30 @@
                 <div class="proj-num">PROJECT 02</div>
                 <h3 class="proj-title">리틀보스</h3>
                 <p class="proj-en">Little Boss</p>
-                <p class="proj-desc">LLM 기반 행정문서 처리 자동화 웹 서비스. 공지문만 올리면 마감일·준비서류·일정을 자동으로 추출해 캘린더에 등록하고 알림을 보내드립니다.</p>
+                <div class="proj-nar">
+                    <div class="nar-item">
+                        <div class="nar-label">Need</div>
+                        <ul class="nar-list">
+                            <li>행정문서를 직접 읽고 마감일·일정을 파악해야 하는 번거로움</li>
+                            <li>복잡한 서류 처리를 자동화하는 도구의 부재</li>
+                        </ul>
+                    </div>
+                    <div class="nar-item">
+                        <div class="nar-label">Action</div>
+                        <ul class="nar-list">
+                            <li>4인 팀 구성 중 프론트엔드 개발 및 UI 디자인 담당</li>
+                            <li>Figma로 서비스 디자인 시안 제작 후 직접 퍼블리싱</li>
+                            <li>React 기반 문서 업로드 · 대시보드 · 일정 관리 화면 구현</li>
+                            <li>LLM 분석 결과를 캘린더와 연동하는 UI 설계 및 개발</li>
+                        </ul>
+                    </div>
+                    <div class="nar-item">
+                        <div class="nar-label">Result</div>
+                        <ul class="nar-list">
+                            <li>2026 춘계학술대회 최우수 발표 논문상 수상</li>
+                        </ul>
+                    </div>
+                </div>
                 <div class="proj-tags">
                     <span class="tag">React</span>
                     <span class="tag">JavaScript</span>
@@ -391,7 +451,29 @@
                 <div class="proj-num">PROJECT 03</div>
                 <h3 class="proj-title">AI 친구<br>전화 서비스</h3>
                 <p class="proj-en">Elderly AI Friend Call Service</p>
-                <p class="proj-desc">독거노인의 사회적 고립과 정서적 외로움을 해소하기 위한 AI 전화 서비스. 전공 동아리 코딩봇 내 지도교수 참여 2인 팀으로 개발 중입니다.</p>
+                <div class="proj-nar">
+                    <div class="nar-item">
+                        <div class="nar-label">Need</div>
+                        <ul class="nar-list">
+                            <li>독거노인의 사회적 고립과 정서적 외로움 문제</li>
+                            <li>위급 상황 발생 시 즉각적인 도움 요청이 어려운 환경</li>
+                        </ul>
+                    </div>
+                    <div class="nar-item">
+                        <div class="nar-label">Action</div>
+                        <ul class="nar-list">
+                            <li>전공 동아리 코딩봇 내 지도교수 참여 2인 팀으로 개발 중</li>
+                            <li>풀스택 개발 참여 · 프론트엔드 UI 디자인 및 개발 담당</li>
+                            <li>AI 전화 응답 · Spring Boot + WebSocket + Gemini API 연동</li>
+                        </ul>
+                    </div>
+                    <div class="nar-item">
+                        <div class="nar-label">Result</div>
+                        <ul class="nar-list">
+                            <li>개발 진행 중 (2026.03~)</li>
+                        </ul>
+                    </div>
+                </div>
                 <div class="proj-tags">
                     <span class="tag">Vanilla JS</span>
                     <span class="tag">Cordova</span>
