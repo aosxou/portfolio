@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>이가윤 — Frontend Developer</title>
+    <title>이가윤 — Backend Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Pretendard:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -175,6 +175,7 @@
           border-radius:999px;padding:5px 12px;
           font-size:12px;font-weight:700;
           display:flex;align-items:center;gap:6px;
+          z-index:2;
         }
         .wip-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--pink);animation:blink 1.4s infinite;}
         @keyframes blink{0%,100%{opacity:1;}50%{opacity:.3;}}
@@ -272,14 +273,14 @@
     </div>
 </nav>
 
-<!-- HERO — "Portfolio" 크게, "Gayun Lee" 유지 -->
+<!-- HERO -->
 <section class="hero">
     <div class="hero-inner">
         <div>
-            <div class="hero-eyebrow eyebrow reveal">Frontend Developer</div>
+            <div class="hero-eyebrow eyebrow reveal">Backend Developer</div>
             <h1 class="hero-name reveal">Port<span>folio</span></h1>
             <p class="hero-role reveal">Gayun Lee</p>
-            <p class="hero-tagline reveal">인터페이스를 통해 사람과 서비스를 잇는 개발자입니다. <br> UI 디자인부터 React 구현까지 직접 완성합니다.</p>
+            <p class="hero-tagline reveal">제약이 많은 환경에서 구조를 설계하고 문제를 풀어내는 백엔드 개발자입니다. <br> 카메라 SDK 연동부터 AWS 서버리스 아키텍처까지 직접 설계합니다.</p>
             <div class="hero-actions reveal">
                 <a class="btn-primary" href="#project">프로젝트 보기</a>
                 <a class="btn-ghost" href="#contact">연락하기</a>
@@ -300,9 +301,9 @@
             </div>
             <div class="reveal">
                 <div class="about-name">이가윤</div>
-                <div class="about-role">Frontend Developer · UI Designer</div>
+                <div class="about-role">Backend Developer · Cloud Infra</div>
                 <p class="about-desc">
-                    신구대학교 컴퓨터소프트웨어학과에 재학 중이며, 디자인 기획부터 React 구현까지 혼자 완성할 수 있는 프론트엔드 개발자입니다. AI 기반 서비스의 사용자 경험을 직접 설계하고 구현하는 것에 관심이 많습니다.
+                    신구대학교 컴퓨터소프트웨어학과에 재학 중이며, 제약이 많은 환경에서 백엔드 구조를 직접 설계하고 문제를 풀어온 경험이 있습니다. 카메라처럼 동시 처리가 불가능한 리소스를 큐로 제어하거나, IAM 권한이 제한된 AWS 환경에서 데이터 흐름을 설계하는 등 정해진 답이 없는 제약 조건 속에서 구조를 찾아내는 과정에 강점이 있습니다.
                 </p>
                 <div class="info-cards">
                     <div class="info-card">
@@ -323,15 +324,16 @@
                         <ul>
                             <li>정보처리산업기사 (필기)</li>
                             <li>AWS Certified AI Practitioner</li>
+                            <li>Google Analytics (GA4) 인증</li>
                             <li>운전면허 2종 보통</li>
                         </ul>
                     </div>
                     <div class="info-card">
                         <div class="ic-label">관심 분야</div>
                         <ul>
-                            <li>AI 서비스 프론트엔드</li>
-                            <li>사용자 경험 설계</li>
-                            <li>데이터 시각화</li>
+                            <li>서버 · 클라우드 아키텍처 설계</li>
+                            <li>제약 환경에서의 문제 해결</li>
+                            <li>데이터 파이프라인</li>
                         </ul>
                     </div>
                 </div>
@@ -344,16 +346,113 @@
     <div class="wrap">
         <div class="section-head reveal">
             <span class="eyebrow">Projects</span>
-            <h2>직접 기획하고<br>구현한 서비스들</h2>
+            <h2>직접 설계하고<br>구현한 백엔드</h2>
+        </div>
+
+        <!-- Pik-Cha! -->
+        <div class="project-item reveal">
+            <div class="project-visual" style="display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;padding:24px;gap:20px;">
+                <svg viewBox="0 0 480 430" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pik-Cha 백엔드 아키텍처 다이어그램">
+                    <defs>
+                        <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                            <path d="M0,0 L10,5 L0,10 z" fill="#8B72FF"/>
+                        </marker>
+                    </defs>
+
+                    <rect x="130" y="16" width="220" height="52" rx="12" fill="#FFFFFF" stroke="#E4E4E7" stroke-width="1.5"/>
+                    <text x="240" y="38" text-anchor="middle" font-family="Pretendard, sans-serif" font-size="13" font-weight="700" fill="#18181B">다중 사용자 촬영 요청</text>
+                    <text x="240" y="56" text-anchor="middle" font-family="Pretendard, sans-serif" font-size="11" fill="#A1A1AA">동시 접속 시나리오</text>
+
+                    <line x1="240" y1="68" x2="240" y2="96" stroke="#8B72FF" stroke-width="2" marker-end="url(#arrow)"/>
+
+                    <rect x="110" y="98" width="260" height="56" rx="12" fill="#EEEBFF" stroke="#8B72FF" stroke-width="1.8"/>
+                    <text x="240" y="122" text-anchor="middle" font-family="Pretendard, sans-serif" font-size="13" font-weight="800" fill="#6C4FE0">EdsdkWorker — 큐 기반 직렬화</text>
+                    <text x="240" y="140" text-anchor="middle" font-family="Pretendard, sans-serif" font-size="11" fill="#6C4FE0">카메라 처리 속도에 맞춰 순차 실행</text>
+
+                    <line x1="240" y1="154" x2="240" y2="182" stroke="#8B72FF" stroke-width="2" marker-end="url(#arrow)"/>
+
+                    <rect x="130" y="184" width="220" height="52" rx="12" fill="#FFFFFF" stroke="#E4E4E7" stroke-width="1.5"/>
+                    <text x="240" y="206" text-anchor="middle" font-family="Pretendard, sans-serif" font-size="13" font-weight="700" fill="#18181B">Canon EDSDK (ctypes 연동)</text>
+                    <text x="240" y="224" text-anchor="middle" font-family="Pretendard, sans-serif" font-size="11" fill="#A1A1AA">단일 카메라 리소스 제어</text>
+
+                    <line x1="240" y1="236" x2="240" y2="264" stroke="#8B72FF" stroke-width="2" marker-end="url(#arrow)"/>
+
+                    <rect x="130" y="266" width="220" height="52" rx="12" fill="#FFFFFF" stroke="#E4E4E7" stroke-width="1.5"/>
+                    <text x="240" y="288" text-anchor="middle" font-family="Pretendard, sans-serif" font-size="13" font-weight="700" fill="#18181B">AWS Lambda / API Gateway</text>
+                    <text x="240" y="306" text-anchor="middle" font-family="Pretendard, sans-serif" font-size="11" fill="#A1A1AA">촬영 결과 처리</text>
+
+                    <line x1="200" y1="318" x2="120" y2="344" stroke="#8B72FF" stroke-width="2" marker-end="url(#arrow)"/>
+                    <line x1="280" y1="318" x2="360" y2="344" stroke="#8B72FF" stroke-width="2" marker-end="url(#arrow)"/>
+
+                    <rect x="14" y="346" width="212" height="52" rx="12" fill="#FFFFFF" stroke="#FF80B5" stroke-width="1.6"/>
+                    <text x="120" y="368" text-anchor="middle" font-family="Pretendard, sans-serif" font-size="12.5" font-weight="700" fill="#18181B">S3</text>
+                    <text x="120" y="386" text-anchor="middle" font-family="Pretendard, sans-serif" font-size="10.5" fill="#A1A1AA">presigned URL 업로드</text>
+
+                    <rect x="254" y="346" width="212" height="52" rx="12" fill="#FFFFFF" stroke="#FF80B5" stroke-width="1.6"/>
+                    <text x="360" y="368" text-anchor="middle" font-family="Pretendard, sans-serif" font-size="12.5" font-weight="700" fill="#18181B">DynamoDB</text>
+                    <text x="360" y="386" text-anchor="middle" font-family="Pretendard, sans-serif" font-size="10.5" fill="#A1A1AA">__STATS__ 단일 집계</text>
+
+                    <text x="240" y="418" text-anchor="middle" font-family="Pretendard, sans-serif" font-size="10.5" fill="#A1A1AA" font-style="italic">IAM: SafeRole-sgu-pikcha · Access Key 발급 불가 환경에서 설계</text>
+                </svg>
+
+                <div>
+                    <div style="border-radius:14px;overflow:hidden;border:1px solid var(--border);box-shadow:0 4px 20px rgba(0,0,0,.10);">
+                        <div style="display:flex;gap:6px;align-items:center;padding:9px 12px;background:#1c1c1e;">
+                            <span style="width:9px;height:9px;border-radius:50%;background:#ff5f57;display:inline-block;"></span>
+                            <span style="width:9px;height:9px;border-radius:50%;background:#febc2e;display:inline-block;"></span>
+                            <span style="width:9px;height:9px;border-radius:50%;background:#28c840;display:inline-block;"></span>
+                        </div>
+                        <img src="픽차_화면.png" alt="Pik-Cha! 실제 서비스 시작 화면" style="width:100%;display:block;">
+                    </div>
+                    <p style="margin-top:10px;font-size:12px;color:var(--muted);text-align:center;">실제 서비스 화면 — Pik-Cha! 시작 페이지</p>
+                </div>
+            </div>
+            <div>
+                <div class="proj-num">PROJECT 01</div>
+                <h3 class="proj-title">Pik-Cha!</h3>
+                <p class="proj-en">DSLR 무인 포토부스 — 백엔드</p>
+                <div class="proj-nar">
+                    <div class="nar-item">
+                        <div class="nar-label">Need</div>
+                        <ul class="nar-list">
+                            <li>카메라라는 동시 처리 불가능한 단일 리소스에 여러 사용자의 촬영 요청이 몰리는 문제</li>
+                            <li>Access Key 발급이 막힌 IAM 제약 환경에서 안전한 업로드·통계 집계 구조 필요</li>
+                        </ul>
+                    </div>
+                    <div class="nar-item">
+                        <div class="nar-label">Action</div>
+                        <ul class="nar-list">
+                            <li>6인 팀 중 백엔드 3인으로 참여해 카메라 제어·업로드·세션 처리 로직과 AWS 인프라 설계 담당</li>
+                            <li>Canon EDSDK를 ctypes로 연동하고, EdsdkWorker 큐 기반 스레드 직렬화로 촬영 요청을 순차 처리하도록 설계</li>
+                            <li>IAM 역할(SafeRole-sgu-pikcha)이 Access Key 발급을 막은 환경에서 S3 presigned URL 발급 구조 설계</li>
+                            <li>DynamoDB의 Scan/Query가 막힌 조건에서 통계 전용 단일 아이템(__STATS__) 누적 방식으로 집계 로직 설계</li>
+                        </ul>
+                    </div>
+                    <div class="nar-item">
+                        <div class="nar-label">Result</div>
+                        <ul class="nar-list">
+                            <li>학교 엑스포 부스 시연을 목표로 개발 진행 중</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="proj-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">AWS Lambda</span>
+                    <span class="tag">DynamoDB</span>
+                    <span class="tag">S3</span>
+                    <span class="tag neutral">6인 팀(백엔드 3인)</span>
+                </div>
+                <div class="proj-meta">
+                    <span>📅 2026.06 — 진행중</span>
+                    <span>🎓 학교 엑스포 시연 예정</span>
+                </div>
+            </div>
         </div>
 
         <!-- 유어커넥트 -->
         <div class="project-item reveal">
-            <div class="project-visual">
-                <img src="프로젝트1.png" alt="유어커넥트 서비스 화면">
-            </div>
             <div>
-                <div class="proj-num">PROJECT 01</div>
+                <div class="proj-num">PROJECT 02</div>
                 <h3 class="proj-title">유어커넥트</h3>
                 <p class="proj-en">YourConnect</p>
                 <div class="proj-nar">
@@ -367,7 +466,7 @@
                     <div class="nar-item">
                         <div class="nar-label">Action</div>
                         <ul class="nar-list">
-                            <li>4인 팀 구성 중 프론트엔드 개발 및 UI 디자인 담당</li>
+                            <li>기획은 4인 팀 전체가 함께 진행, 본인은 프론트엔드 개발 및 UI 디자인 담당</li>
                             <li>Figma로 서비스 디자인 시안 제작 후 직접 퍼블리싱</li>
                             <li>React 기반 프론트엔드 UI 설계 및 구현</li>
                             <li>AI 코칭 서비스 화면 흐름 설계 및 사용자 인터랙션 개발</li>
@@ -393,12 +492,18 @@
                 </div>
                 <a class="proj-link" href="https://github.com/aosxou/2026_CapstoneProject" target="_blank" rel="noopener">GitHub 보기 →</a>
             </div>
+            <div class="project-visual">
+                <img src="프로젝트1.png" alt="유어커넥트 서비스 화면">
+            </div>
         </div>
 
         <!-- 리틀보스 -->
         <div class="project-item reveal">
+            <div class="project-visual">
+                <img src="프로젝트2.png" alt="리틀보스 대시보드 화면">
+            </div>
             <div>
-                <div class="proj-num">PROJECT 02</div>
+                <div class="proj-num">PROJECT 03</div>
                 <h3 class="proj-title">리틀보스</h3>
                 <p class="proj-en">Little Boss</p>
                 <div class="proj-nar">
@@ -438,19 +543,12 @@
                 </div>
                 <a class="proj-link" href="https://github.com/poro832/little-boss" target="_blank" rel="noopener">GitHub 보기 →</a>
             </div>
-            <div class="project-visual">
-                <img src="프로젝트2.png" alt="리틀보스 대시보드 화면">
-            </div>
         </div>
 
         <!-- AI 친구 전화 서비스 -->
         <div class="project-item reveal">
-            <div class="project-visual">
-                <div class="wip-badge">개발 진행 중</div>
-                <img src="프로젝트3.png" alt="AI 친구 전화 서비스 화면">
-            </div>
             <div>
-                <div class="proj-num">PROJECT 03</div>
+                <div class="proj-num">PROJECT 04</div>
                 <h3 class="proj-title">AI 친구<br>전화 서비스</h3>
                 <p class="proj-en">Elderly AI Friend Call Service</p>
                 <div class="proj-nar">
@@ -465,7 +563,7 @@
                         <div class="nar-label">Action</div>
                         <ul class="nar-list">
                             <li>전공 동아리 코딩봇 내 지도교수 참여 2인 팀으로 개발 중</li>
-                            <li>풀스택 개발 참여 · 프론트엔드 UI 디자인 및 개발 담당</li>
+                            <li>프론트엔드 UI 디자인 및 개발 담당</li>
                             <li>AI 전화 응답 · Spring Boot + WebSocket + Gemini API 연동</li>
                         </ul>
                     </div>
@@ -486,6 +584,10 @@
                     <span>📅 2026.03 — 진행 중</span>
                     <span>🎓 동아리 코딩봇</span>
                 </div>
+            </div>
+            <div class="project-visual">
+                <div class="wip-badge">개발 진행 중</div>
+                <img src="프로젝트3.png" alt="AI 친구 전화 서비스 화면">
             </div>
         </div>
     </div>
@@ -535,6 +637,13 @@
                             <div class="award-org">한국산업인력공단</div>
                         </div>
                     </div>
+                    <div class="award-item">
+                        <span class="award-date">2026.08</span>
+                        <div class="award-content">
+                            <div class="award-title">Google Analytics (GA4) 인증</div>
+                            <div class="award-org">Google</div>
+                        </div>
+                    </div>
                 </div>
                 <div class="award-group" style="margin-top:32px;">
                     <h3>활동</h3>
@@ -556,36 +665,38 @@
         </div>
         <div class="skills-grid reveal">
             <div class="skill-group">
-                <div class="sg-label">주력 기술</div>
+                <div class="sg-label">Backend / Infra</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">FastAPI</span>
+                    <span class="skill-tag">Spring Boot</span>
+                    <span class="skill-tag">AWS (Lambda·S3·DynamoDB·API Gateway·IAM)</span>
+                </div>
+            </div>
+            <div class="skill-group">
+                <div class="sg-label">Frontend</div>
                 <div class="skill-tags">
                     <span class="skill-tag">HTML5</span>
                     <span class="skill-tag">CSS3</span>
                     <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">TypeScript</span>
                     <span class="skill-tag">React</span>
                 </div>
             </div>
             <div class="skill-group">
-                <div class="sg-label">추가 기술</div>
+                <div class="sg-label">협업 · 도구</div>
                 <div class="skill-tags">
-                    <span class="skill-tag">TypeScript</span>
-                    <span class="skill-tag">Vanilla JS</span>
-                    <span class="skill-tag">Responsive Web</span>
-                </div>
-            </div>
-            <div class="skill-group">
-                <div class="sg-label">디자인 · 협업 도구</div>
-                <div class="skill-tags">
-                    <span class="skill-tag tool">Figma</span>
                     <span class="skill-tag tool">Git</span>
                     <span class="skill-tag tool">GitHub</span>
+                    <span class="skill-tag tool">Figma</span>
                 </div>
             </div>
             <div class="skill-group">
                 <div class="sg-label">관심 · 학습 중</div>
                 <div class="skill-tags">
-                    <span class="skill-tag tool">AWS</span>
-                    <span class="skill-tag tool">AI 서비스 연동</span>
-                    <span class="skill-tag tool">데이터 시각화</span>
+                    <span class="skill-tag tool">대용량 트래픽 제어</span>
+                    <span class="skill-tag tool">클라우드 아키텍처</span>
+                    <span class="skill-tag tool">데이터 파이프라인</span>
                 </div>
             </div>
         </div>
